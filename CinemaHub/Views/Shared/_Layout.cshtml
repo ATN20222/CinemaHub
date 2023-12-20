@@ -1,0 +1,204 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+
+
+        <link rel="stylesheet" href="~/cssFiles/css/all.min.css">
+        <link rel="stylesheet" href="~/cssFiles/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Css/HomeStyle.css">
+        <link rel="stylesheet" href="~/Css/style.css">
+        <link rel="stylesheet" href="~/Css/UserStyle.css">
+        <link rel="stylesheet" href="~/Css/Film.css">
+        <link id="linkcss" rel="stylesheet" href=>
+       
+
+  
+
+
+</head>
+<body style="transition:all .3s linear">
+
+
+    <div class="popUp">
+        <div class="popUp-content">
+            <i class="fas fa-solid fa-check check"></i>
+
+            <div class="message">
+                <span class="text text-1">Success</span>
+                <span class="text text-2">Your changes has been saved</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress"></div>
+    </div>
+
+
+    @Html.Partial("_NavBar");
+
+
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+
+
+
+        <footer style=" padding: 40px; background-color: #000000; overflow: hidden;">
+            <div class="container ">
+                <div class="row row1 align-items-center">
+
+                    <div class="col-lg-3 col-md-4">
+                        <img src="~/pornhub_logo_by_imdoctab_de0703b-pre-removebg-preview.png" alt="" width="200px" height="150px">
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-4" style="color: #4b505e; padding: 10px;">
+                        <h5>Who Are We</h5>
+                        <ul class="list-unstyled FooterLinks" style="height: 250px; display: flex; flex-direction: column; justify-content: space-around; align-content: space-around;">
+                            <li> <a href="">About Us</a></li>
+                            <li> <a href="">Cinema_Hub</a></li>
+                            <li> <a href="">Complaints / Suggestions</a></li>
+                            <li> <a href="">Your Opinion Matters</a></li>
+                            <li> <a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4" style="color: #4b505e; padding: 10px;">
+                        <h5>Important Links</h5>
+                        <ul class="list-unstyled FooterLinks" style="height: 250px;">
+                            <li style="padding-bottom: 10px;"> <a href="">Site Map</a></li>
+                            <li style="padding-bottom: 10px;"> <a href="">Egyptian Website</a></li>
+                            <li style="padding-bottom: 10px;"> <a href="">Fully Egyptian Made</a></li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-4" style="color: #4b505e; padding: 10px;">
+                        <h5>Follow Us</h5>
+                        <ul class="FooterSocial list-unstyled list-inline">
+                            <li class="list-inline-item"> <a href="facebook.com"><i class="fa-brands fa-facebook FIcon" style="width: 40px; height: 40px;"></i></a></li>
+                            <li class="list-inline-item"> <a href="youtube.com"><i class="fa-brands fa-youtube YIcon" style="width: 40px; height: 40px; color: red;"></i></a></li>
+                            <li class="list-inline-item"> <a href=""><i class="fa-solid fa-globe GIcon" style="width: 40px; height: 40px; color: rgb(211, 241, 127);"></i></a></li>
+
+                        </ul>
+                        <ul class="list-unstyled FooterLinks" style="height: 200px;">
+                            <li style="padding-bottom: 10px;">Email : <a href="">cinema_hub@gmail.com</a></li>
+                            <li style="padding-bottom: 10px;">Phone : <a href="">+0201200835855</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="FooterBottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 justify-content-center d-flex" style="color: #4b505e;"> <p> ©Cinema-Hub 2022 - 2023</p> </div>
+
+                        <div class="col-lg-3 justify-content-center">
+                            <ul class="social list-unstyled list-inline justify-content-center d-flex">
+                                <li class="list-inline-item"> <a href="facebook.com"><i class="fa-brands fa-facebook" style="color:#4b505e ;"></i></a></li>
+                                <li class="list-inline-item"> <a href="youtube.com"><i class="fa-brands fa-youtube" style="color:#4b505e ;"></i></a></li>
+                                <li class="list-inline-item"> <a href=""><i class="fa-solid fa-globe" style="color:#4b505e ;"></i></a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <ul class="list-unstyled list-inline justify-content-center FooterFinish">
+                                <li class="list-inline-item "> <a href=""> Terms Of Use</a></li>
+                                <li class="list-inline-item"> <a href=""> Privacy Policy</a></li>
+                                <li class="list-inline-item"> <a href=""> FAQ</a></li>
+                                <li class="list-inline-item"> <a href=""> Customer Services Chatter</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </footer>
+
+
+    </div>
+
+    <button class="btn btn-primary " id="DarkMode" style="position: fixed ; bottom: 10%; right: 5%;z-index: 25;  border-radius: 50%; height: 50px; width: 50px;"> <i style="color:orange" class="fa-solid fa-moon"></i></button>
+    <button class="btn btn-primary " id="WhiteMode" style="position: fixed ; bottom: 10%; right: 5%;z-index: 25;  border-radius: 50%; height: 50px; width: 50px;"> <i style="color:orange" class="fa-solid fa-sun"></i></button>
+
+
+
+    <script src="~/cssFiles/js/all.min.js"></script>
+    <script src="~/cssFiles/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Js/Home.js"></script>
+
+
+    <script>
+
+        var DarkModeBtn = document.getElementById("DarkMode");
+        var WhiteModeBtn = document.getElementById("WhiteMode");
+        WhiteModeBtn.style.display = "none";
+        var linkcss = document.getElementById("linkcss");
+        var clicked = false;
+
+        window.onload = function () {
+            if (localStorage.getItem('Dark') == 'false') {
+                linkcss.attributes[2].value = "/Css/WhiteMode.css";
+                WhiteModeBtn.style.display = "block";
+                DarkModeBtn.style.display = "none";
+            } else {
+                linkcss.attributes[2].value = "";
+                WhiteModeBtn.style.display = "none";
+                DarkModeBtn.style.display = "block";
+            }
+        }
+
+
+        DarkModeBtn.addEventListener("click", function () {
+
+
+                linkcss.attributes[2].value = "/Css/WhiteMode.css";
+                WhiteModeBtn.style.display = "block";
+                DarkModeBtn.style.display = "none";
+                localStorage.setItem('Dark', 'false');
+
+
+
+            
+        });
+
+
+        WhiteModeBtn.addEventListener("click", function () {
+
+                linkcss.attributes[2].value = "";
+                WhiteModeBtn.style.display = "none";
+                DarkModeBtn.style.display = "block";
+                localStorage.setItem('Dark', 'true');
+
+
+        });
+
+
+
+    </script>
+
+   @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

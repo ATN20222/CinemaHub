@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "ManageMovies";
+    Layout = "~/Views/Shared/DashBoardLayout.cshtml";
+}
+
+
+
+
+<div class="form-group" style="margin:10px;">
+    <a href="/DashBoard/MoviesForm" class="btn btn-warning" style="background-color: rgb(255, 172, 18); width:100px; display: flex; justify-content: center; align-items: center; height: 50px;">New Movie</a>
+
+</div>
+
+<table id="movise" class="table table-bordered table-hover " style="width:auto !important;">
+    <thead>
+
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+
+</table>
+
+
+
+@section scripts
+{
+
+
+    <script>
+        $(document).ready(function () {
+
+            var Table = $("#movise").DataTable({
+                responsive: true,
+                ajax: {
+                    url: "/api/movie",
+                    dataSrc: ""
+
+                },
+
+
+                columns: [
+                    {
+                        data: "Name",
+                        render: function (data, type, mov) {
+                            return "<a href='/DashBoard/edit/" + mov.Id + "' >" + mov.Name + "</a>";
+
+                        }
+                    },
+
+
+                    {
+                        data: "Genre.Name",
+                    },
+
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<button class='btn btn-link js-delete' data-movise-id=" + data + ">Delete</button>"
+                        }
+
+                    }
+
+                ]
+            });
+
+            $("#movise").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this movie ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/Movie/" + button.attr("data-movise-id"),
+                            method: "DELETE",
+                            success: function () {
+                                Table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+
+        });
+
+
+    </script>
+
+}

@@ -1,0 +1,82 @@
+﻿
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+}
+
+p {
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+}
+
+
+
+.Bar {
+    transition: all .7s !important;
+    animation: BarLoad 1s linear 1;
+}
+
+
+@keyframes shine {
+    0% {
+        background-position-x: -500%;
+    }
+
+    100% {
+        background-position-x: 500%;
+    }
+}
+
+@keyframes BarLoad {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+
+thead{
+   color:white;
+   background-color:black;
+}
+
+table.dataTable tbody tr {
+    background-color: black !important;
+    color:white;
+    transition :all .3s;
+}
+
+
+    table.dataTable tbody tr:hover {
+        background-color: rgb(255, 172, 18) !important;
+    }
+
+
+table.dataTable tbody tr button{
+    text-decoration:none;
+
+}

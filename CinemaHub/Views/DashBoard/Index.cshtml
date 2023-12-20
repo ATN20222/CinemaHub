@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CinemaHub.Models.Movie>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/DashBoardLayout.cshtml";
+
+
+    }
+
+    <h2>Dash Board</h2>
+
+        <h2>
+            Number Of Movies
+            
+           
+        </h2>
+        <div style="border-radius: 10px; display: flex; height: 27px; position: relative; background-color: aliceblue; width: 200px; align-items: center;">
+            <div class="Bar" style=" position: absolute; left: 0px; width: 80%; background-color: rgb(255, 172, 18); height: 100%; border-radius: 10px; ">
+                <span style="display:flex; justify-content:center; align-content:center; font-size:20px;">
+                    @Model.Count()
+                </span>
+                
+            </div>
+
+        </div>
+        
+
+
+

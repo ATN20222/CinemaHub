@@ -1,0 +1,191 @@
+﻿@model CinemaHub.ViewModels.ViewUserProfile
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Settings">
+    <div class="container">
+        <div class="row" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <div class="col-4" style="height: 800px; background-color: #0d0e11; padding: 4%; border-radius: 20px;">
+
+                <div class="container " style="display:flex ; justify-content: center ; ">
+                    <i class="fa-solid fa-user" style="background-color: #4b505e; border-radius: 50%; color: aliceblue; width: 100px; height: 100px;"></i>
+                </div>
+                <div class="container" style="margin-top: 50px;">
+                    <div class="row">
+                        <div class="SideButtons" style="height: 300px; align-items: center; display: flex; flex-direction: column; justify-content: space-around;">
+                            <div class="row">
+                                <div class="col-12" style="display: flex; justify-content: center;">
+
+                                    <button id="ProfileBtn">User Profile</button>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-12" style="display: flex; justify-content: center;">
+
+                                    <button id="ChangePasswordBtn">Change password</button>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="display: flex; justify-content: center;">
+
+                                    <button id="ChangePlanBtn">Change Plan</button>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12" style="display: flex; justify-content: center;">
+
+                                    <button id="LogoutBtn">Logout</button>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-7" style="background-color: #131416; height: 700px;border-radius: 20px; ">
+
+                <div class="container">
+
+                    <div class="UserProfileField " style="height:700px; width: inherit;">
+                   
+                        <div class="row" style=" width: 100%; height: 100%;">
+
+                            <div class="col-md-6">
+
+                                <div class="InputContainer">
+
+                                    <label for="Lname" style="color: #4b505e;">Id</label>
+                                    <input class="Lname" type="text" disabled placeholder="UserName" value="@Model.user.Id">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <div class="InputContainer">
+
+                                    <label for="Lname" style="color: #4b505e;">UserName</label>
+                                    <input class="Lname" type="text" disabled placeholder="UserName" value="@Model.user.UserName">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 ">
+                                <div class="InputContainer align-items-start ">
+
+                                    <label for="Email" style="color: #4b505e; margin-top: 12px;">E-Mail</label>
+                                    <input class="Email" type="email" disabled placeholder="Email" value="@Model.user.Email">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="InputContainer align-items-start ">
+
+                                    <label for="PhoneNumber" style="color: #4b505e; margin-top: 12px;"> Phone</label>
+                                    <input class="PhoneNumber" type="text" disabled placeholder="PhoneNumber" value="@Model.user.PhoneNumber">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="container">
+
+                    <div class="ChangePasswordField " style="height:700px; width: inherit;">
+
+                        <div class="row" style=" width: 100%; height: 100%;">
+                            <div class="col-md-12">
+
+
+                                @using (Html.BeginForm("ChangePassword", "Manage", FormMethod.Post,
+                                    new { @class = "form-horizontal form-group", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <h4>Change Password Form</h4>
+                                    <hr />
+                                    if(TempData["ShowError"] == "false" || TempData["ShowErrorfor"] == "false")
+                                    {
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                                    }
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.ChangePassword.OldPassword, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.ChangePassword.OldPassword, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.ChangePassword.NewPassword, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.ChangePassword.NewPassword, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.ChangePassword.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            @Html.PasswordFor(m => m.ChangePassword.ConfirmPassword, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Change password" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                }
+                                @section Scripts {
+                                    @Scripts.Render("~/bundles/jqueryval")
+                                }
+
+
+
+
+                            </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="ChangePlanField">
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<link href="~/Css/UserStyle.css" />
+<script src="~/Js/User.js"></script>

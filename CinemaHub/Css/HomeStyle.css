@@ -1,0 +1,394 @@
+
+body{
+    background-color: rgb(0, 0, 0);
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* height: 1000px; */
+  height: auto;
+ 
+  }
+
+
+
+
+  .Notify ,
+  .user,
+  .search{
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+}
+
+
+  .fa-bell,
+  .fa-user,
+  .fa-magnifying-glass{
+    color: #4b505e;
+    transition: all 0.2s;
+  }
+
+
+
+
+  .Notify:hover .fa-bell,
+  .user:hover .fa-user,
+  .search:hover .fa-magnifying-glass{
+    color: #fc9603;
+  }
+
+
+  .SearchField{
+    transition: all 0.2s;
+    width: 50px;
+    border-radius: 20px;
+    padding-left: 18%;
+    background-color: #4b505e;
+    border: transparent;
+    outline:none;
+    color: #fc9603;
+  }
+
+  .Open{
+    width: 150px;
+  }
+
+
+
+
+.MainContainer{
+  position: relative;
+  top: 0%;
+  
+}
+
+
+
+.Home{
+  /* position: absolute; */
+  top: 0%;
+  width: 100%;
+  left: 0%;
+  z-index: 4;
+  margin-top: 8px;
+  /* background-color: #4b505e; */
+  /* height: 1500px; */
+  transition: all .5s;
+}
+
+
+
+.Movise{
+  z-index: 3;
+  /* position: absolute; */
+  left: 0%;
+  width: 100%;
+  top: 0%;
+  margin-top: 8px;
+  background-color: #000000;
+  /* height: 1500; */
+  transition: all .5s;
+
+}
+
+
+.Series{
+  z-index: 3;
+  /* position: absolute; */
+  left: 0%;
+  width: 100%;
+  top: 0%;
+  margin-top: 8px;
+  background-color: #000000;
+  /* height: 1500; */
+  transition: all .5s;
+
+}
+
+
+
+
+
+.MyList{
+  /* position: absolute; */
+  top: 0%;
+  width: 100%;
+  left: 0%;
+  z-index: 4;
+  margin-top: 8px;
+  /* background-color: #4b505e; */
+  /* height: 1500px; */
+  transition: all .5s;
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+.Movise_1_Slider{
+  transition: all .5s;
+  transform: translateX(0px);
+
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+}
+.card img{
+  transition: all 0.7s;
+}
+.ShadowFilm{
+  transition: all 0.2s;
+  position: absolute; 
+  background-color: #00000094; 
+  height:0%; 
+  width: 100%;
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+}
+
+.card:hover .ShadowFilm  {
+  height: 100%;
+  
+
+}
+
+
+
+
+
+.ShadowFilm {
+  cursor: pointer;
+}
+
+.BluRay{
+  color: #000000; 
+  background-color: #fc9603; 
+  width: 120px; position: absolute; 
+  top:15px; right: -35px; 
+  text-align: center; 
+  border-radius: 10px; 
+  rotate: 45deg;
+}
+
+
+
+.LeftArrow,
+.RightArrow{
+  transition: all .2s;
+  color: #4b505e;
+}
+
+
+
+.LeftBtn:hover .LeftArrow,
+.RightBtn:hover .RightArrow{
+  color: #fc9603;
+}
+
+
+
+.Movise_1_Slider,
+.Movise_2_Slider,
+.Movise_3_Slider{
+transition: all .5s;
+}
+
+
+
+
+.MoviesContainer,
+.SeriesContainer{
+  /* height: 1000px;  */
+  /* overflow-y:scroll;  */
+  overflow-x: hidden;
+  transition: all .2s;
+  scroll-behavior: smooth;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    position: relative;
+    top: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: #4b505e;
+    transition: all .7s;
+  }
+  a:hover{
+    color: #fc9603;
+    text-decoration:underline;
+  }
+  
+  .FooterFinish li a{
+    text-decoration: none;
+    color: #5e5d76;
+  }
+  
+  .FooterFinish li::before{
+    
+    content: "";
+    margin: 4px;
+    width: 1px;
+    height: 10px;
+    top: 1px;
+    background: #5e5d76;
+    display: inline-block;
+    position: relative;
+  
+  }
+
+  a:hover{
+      text-decoration:none;
+      
+  }
+
+
+.NotActive {
+    border-bottom: 2px solid transperant;
+    color: #4b505e;
+}
+  
+
+.active {
+    border-bottom: 2px solid #fc9603 !important;
+    color: #fc9603 !important; 
+}
+
+
+
+.menu-toggle {
+    transition:all .5s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+}
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #333;
+        border-radius: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+        .menu-toggle span:first-child {
+            transform-origin: top left;
+        }
+
+        .menu-toggle span:last-child {
+            transform-origin: bottom left;
+        }
+
+    .menu-toggle.active span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+
+
+
+
+
+.openNav {
+    height: 180px;
+    transition: all .5s;
+}
+
+nav {
+    transition: all .5s;
+    height: auto;
+}
+
+
+
+@media (min-width: 600px) {
+    nav {
+        height: auto;
+        overflow: hidden;
+    }
+    .openNav {
+        height: auto;
+        transition: all .5s;
+    }
+
+}
+
+@media (max-width: 600px) {
+    nav{
+        height:50px;
+        overflow:hidden;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
+
+
+
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #333 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: orange !important;
+    transition: all .1s ease;
+    border-radius: 5px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #ffb835 !important;
+    }

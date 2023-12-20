@@ -1,0 +1,106 @@
+﻿@model CinemaHub.Models.Movie
+@{
+    ViewBag.Title = "Watching Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container" style="margin-top: 5%;">
+    <div class="row">
+
+        <div class="col-lg-2" style="display: flex; justify-content: center; align-items: center;">
+            <div class="card">
+                <img src="~/film2.jpg" alt="" width="100%" height="300px">
+            </div>
+        </div>
+
+        <div class="col-lg-10">
+            <div class="container">
+
+                <span class="FilmName">Watching Film </span>
+
+                <div class="row" style="display: flex; justify-content: space-evenly; margin: 10px;">
+                    <div class="col-lg-5 DateModified">
+                        <span>Release Date : </span> <span> @Model.ReleaseDate</span>
+                    </div>
+                    <div class="col-lg-1">
+                    </div>
+
+                    <div class="col-lg-5 Type">
+                        <span>Type : </span> <span>@Model.Genre.Name</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+<div class="container" style="margin-top: 5%;">
+    <div class="row" style="min-height: 500px; align-items: center;">
+        <div class="col-lg-3" style="border-radius: 0px; display: flex; justify-content: center ; align-items: center; flex-direction: column; background-color: #090909; max-height: 300px;">
+            <div class="container">
+
+                <div class="row">
+
+                    <button class="btn ServerImg col-lg-12">
+                        <img src="~/gb.png" alt="">
+                        <span class="">Server1</span>
+                    </button>
+
+                    <button class="btn ServerImg col-lg-12">
+                        <img src="~/gb.png" alt="">
+                        <span class="">Server2</span>
+                    </button>
+
+                    <button class="btn ServerImg col-lg-12">
+                        <img src="~/gb.png" alt="">
+                        <span class="">Server3</span>
+                    </button>
+
+                    <button class="btn ServerImg col-lg-12">
+                        <img src="~/gb.png" alt="">
+                        <span class="">Server4</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row">
+
+                <video controls class="col-lg-12" src="@Model.VidSrc" poster="~/pornhub_logo_by_imdoctab_de0703b-pre-removebg-preview.png" style="max-height: 480px;">
+                </video>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+<script src="~/Js/Film.js"></script>
+<link rel="stylesheet" href="~/Css/Film.css">
+
+

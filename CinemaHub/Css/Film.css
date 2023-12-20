@@ -1,0 +1,131 @@
+
+body{
+    background-color: rgb(0, 0, 0);
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  /* height: 1000px; */
+  height: auto;
+ 
+  }
+
+
+
+  .Notify ,
+  .user,
+  .search{
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+}
+
+
+  .fa-bell,
+  .fa-user,
+  .fa-magnifying-glass{
+    color: #4b505e;
+    transition: all 0.2s;
+  }
+
+
+
+
+  .Notify:hover .fa-bell,
+  .user:hover .fa-user,
+  .search:hover .fa-magnifying-glass{
+    color: #fc9603;
+  }
+
+
+  .SearchField{
+    transition: all .2s;
+    width: 50px;
+    border-radius: 20px;
+    padding-left: 18%;
+    background-color: #4b505e;
+    border: transparent;
+    outline:none;
+    color: #fc9603;
+  }
+
+  .Open{
+    width: 150px;
+  }
+
+
+.FilmName{
+    color: #4b505e; 
+    font-size: 20px; 
+    font-weight: 800 ;
+}
+
+.DateModified{
+    background-color: #111113; 
+    color: #4b505e; 
+    border-radius: 10px; text-align: center; 
+    margin-top: 10px;
+}
+.Type{
+    background-color: #111113; 
+    color: #4b505e;  
+    border-radius: 10px; text-align: center; 
+    margin-top: 10px;
+}
+
+
+.ServerImg{
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin: 10px;
+  background-color: transparent;
+  color: #4b505e;
+  border: transparent;
+  outline: none;
+}
+.ServerImg span{
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  footer{
+    position: relative;
+    top: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: #4b505e;
+    transition: all .7s;
+  }
+  a:hover{
+    color: #fc9603;
+    text-decoration:underline;
+  }
+  
+  .FooterFinish li a{
+    text-decoration: none;
+    color: #5e5d76;
+  }
+  
+  .FooterFinish li::before{
+    
+    content: "";
+    margin: 4px;
+    width: 1px;
+    height: 10px;
+    top: 1px;
+    background: #5e5d76;
+    display: inline-block;
+    position: relative;
+  
+  }

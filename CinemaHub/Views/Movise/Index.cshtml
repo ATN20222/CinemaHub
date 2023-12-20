@@ -1,0 +1,1129 @@
+﻿@model IEnumerable<CinemaHub.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="Movise">
+
+
+
+    <section style="background-color:#000000;">
+        <div class="container">
+
+            <div class="row"><span style="color:  #4b505e ; padding: 8px; font-size: 20px; padding-left: 5%;">Special Movies</span></div>
+
+
+            <div class="row" style="height: 350px; background-color: black;">
+
+                <div class="col-1" style="background-color:black ; display: flex; justify-content: center; align-items: center;">
+                    <button id="Movise_Left" class="LeftBtn" style="background-color:transparent; outline: none; border: none; "><i class="LeftArrow fa-solid fa-angle-left" style="height: 40px;"></i></button>
+                </div>
+
+
+                <div class="col-10" style="overflow: hidden;">
+
+                    <div class="row Movise_Slider" style=" height: 350px; width:1500px; transition: all .5s;">
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="film4.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="Films/Carnifex.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="Films/Sadistic.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="film2.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="0-10865.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="card" style="width: 300px ;">
+                                <div class="ShadowFilm"><i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>  </div>
+                                <img src="075-2763.jpg" alt="" width="100%" height="330px">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-1" style="background-color:black ; display: flex; justify-content: center; align-items: center;">
+                    <button id="Movise_Right" class="RightBtn" style="background-color:transparent; outline: none; border: none; "><i class="RightArrow fa-solid fa-angle-right" style=" height: 40px;"></i></button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <div class="MoviesContainer">
+        <div class="container">
+
+            <div class="row MoviesBLock" style="justify-content:space-around;">
+
+
+
+
+
+                @foreach (var movie in Model)
+                {
+                    {
+
+                        string AddId = "add" + movie.Id;
+                        string CheckedId = "Checked" + movie.Id;
+
+                        <div class="card col-lg-2" style="justify-content:center; width: 200px; background-color: transparent; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                            <div class="card" style="width: 200px; margin: 5px; box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; ">
+                                <div class="ShadowFilm">
+
+                                    <a id="@movie.Id" href="~/Film/WatchingMovie/@movie.Id" class="btn" style="background-color: transparent; border: transparent; outline: none ; display: flex ;flex-direction: column; align-items: center;">
+                                        <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 50%; height: 100px; display: block;"></i><a href="~/Film/WatchingMovie/@movie.Id" style="color: #fc9603; text-decoration: none; ">Play Now</a>
+                                    </a>
+
+                                    @if (movie.IsFavourite == true)
+                                    {
+                                        //href="/Movise/DeleteFav/@movie.Id"
+                                        <button movie-id="@movie.Id" id="RemoveFromFav" class="remove-from-favorites btn" style="width: 45px;justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+                                    }
+                                    else
+                                    {
+                                        //href="/Movise/AddToFavorites/@movie.Id"
+                                        
+                                        <button
+                                                movie-id="@movie.Id"
+                                                id="AddToFav"
+                                                class="add-to-favorites btn"
+                                                style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;">
+                                        <i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> 
+                                        
+                                        </button>
+                                    }
+
+
+
+                                </div>
+                                <img src="@movie.ImgSrc" alt="" width="100%" height="330px">
+                            </div>
+                            <span style="width: 200px; text-align: center; color: #fe9903; font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; ">@movie.Name @movie.ReleaseDate</span>
+                        </div>
+
+                    }
+                }
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+</div>
+<style>
+    .ShadowFilm {
+        transition: all .2s;
+    }
+</style>
+@*<script src="~/Js/Movise.js"></script>*@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@section scripts{
+    <script>
+
+
+        $(document).ready(function () {
+
+    // Bind click event to a parent element
+    $(document).on('click', '.add-to-favorites', function() {
+        var button = $(this);
+        var movieId = button.attr('movie-id');
+        movieId= Number.parseInt(movieId);
+        var url = '@Url.Action("AddToFavorites", "Movise")' + '?id=' + movieId;
+        $.ajax({
+            url: url,
+            type:'POST',
+            dataType: 'json',
+            data: {
+                id: movieId
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.success) {
+                    button.replaceWith(`<button movie-id="${movieId}" id="RemoveFromFav" class="remove-from-favorites btn" style="width: 45px;justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>`);
+
+                    var toast = document.querySelector(".popUp"),
+                        closeIcon = document.querySelector(".close"),
+                        progress = document.querySelector(".progress");
+
+                    let timer1, timer2;
+
+
+                    toast.classList.add("active");
+                    progress.classList.add("active");
+
+                    timer1 = setTimeout(() => {
+                        toast.classList.remove("active");
+                    }, 5000);
+
+                    timer2 = setTimeout(() => {
+                        progress.classList.remove("active");
+                    }, 5300);
+
+                    closeIcon.addEventListener("click", () => {
+                        toast.classList.remove("active");
+
+                        setTimeout(() => {
+                            progress.classList.remove("active");
+                        }, 300);
+
+                        clearTimeout(timer1);
+                        clearTimeout(timer2);
+                    });
+
+                } else {
+                    alert('Failed to add movddddddddie to favorites');
+                }
+            },
+        });
+
+        return false;
+    });
+
+    // Bind click event to a parent element
+    $(document).on('click', '.remove-from-favorites', function() {
+        var button = $(this);
+        var movieId = button.attr('movie-id');
+        console.log(movieId);
+        movieId= Number.parseInt(movieId);
+        var url = '@Url.Action("DeleteFav", "Movise")' + '?id=' + movieId;
+        $.ajax({
+            url: url,
+            type:'POST',
+            dataType: 'json',
+            data: {
+                id: movieId
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.success) {
+                    button.replaceWith(`<button movie-id="${movieId}" id="AddToFav" class="add-to-favorites btn"  style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;">  <i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i>    </button>`);
+
+                    var toast = document.querySelector(".popUp"),
+                        closeIcon = document.querySelector(".close"),
+                        progress = document.querySelector(".progress");
+
+                    let timer1, timer2;
+
+
+                    toast.classList.add("active");
+                    progress.classList.add("active");
+
+                    timer1 = setTimeout(() => {
+                        toast.classList.remove("active");
+                    }, 5000);
+
+                    timer2 = setTimeout(() => {
+                        progress.classList.remove("active");
+                    }, 5300);
+
+                    closeIcon.addEventListener("click", () => {
+                        toast.classList.remove("active");
+
+                        setTimeout(() => {
+                            progress.classList.remove("active");
+                        }, 300);
+
+                        clearTimeout(timer1);
+                        clearTimeout(timer2);
+                    });
+
+
+                } else {
+                    alert('Failed to add movddddddddie to favorites');
+                }
+            },
+            error: function() {
+                ////alert('Failed to add movie to favorites');
+            }
+        });
+        return false;
+    });
+
+});
+
+
+
+    </script>
+
+
+}
+
+
+
+@*<div class="col-md-2 col-lg-2 Film_2067" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+
+                <a id="2067" href="Film.html" class="btn" style="background-color: transparent; border: transparent; outline: none ; display: flex ;flex-direction: column; align-items: center;">
+                    <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 50%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+                </a>
+
+                <button id="add2067" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="Checked2067" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+            </div>
+            <img src="./Films/2067.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+                <button id="addBabylon" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBabylon" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+            </div>
+            <img src="~/Films/Babylon.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddBeneath_The_Green" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBeneath_The_Green" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+
+            <img src="~/Films/Beneath_The_Green.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddCarnifex" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedCarnifex" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Carnifex.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddDetective_Knight_Independece" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedDetective_Knight_Independece" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Detective_Knight_Independece.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+                <button id="AddKlienten" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedKlienten" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Klienten.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddMega_Lightning" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedMega_Lightning" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Mega-Lightning.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddMegan" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedMegan" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Megan.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+                <button id="AddMission_Majnu" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedMission_Majnu" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Mission_Majnu.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddDie_Schwarze_Spnne" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedDie_Schwarze_Spnne" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Die_Schwarze_Spnne.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddNight_Train" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedNight_Train" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Night_Train.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddOperation" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedOperation" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Operation.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddPlane" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedPlane" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Plane.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddPlay_Dead" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedPlay_Dead" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Play-Dead.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddShotgun_Wedding" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedShotgun_Wedding" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Shotgun_Wedding.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddSorry_About_The_Demon" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedSorry_About_The_Demon" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+
+            </div>
+            <img src="/Films/Sorry_About_The_Demon.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddThe_Devil_Beneath" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedThe_Devil_Beneath" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/The_Devil_Beneath.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddThe_Hanging_Sun" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedThe_Hanging_Sun" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/The_Hanging_Sun.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddThe_Old_Way" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedThe_Old_Way" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/The_Old_Way.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddWinter_Witch" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedWinter_Witch" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+
+            </div>
+            <img src="/Films/Winter_Witch.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddAn_Affair_To_Die_For" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedAn_Affair_To_Die_For" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/An_Affair_To_Die_For.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddBanshees_Insherin" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBanshees_Insherin" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Banshees_Insherin.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddBeautiful_Beings" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBeautiful_Beings" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Beautiful_Beings.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddBed_Rest" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBed_Rest" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Bed_Rest.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddBlack_Bird" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBlack_Bird" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Black_Bird.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddBreak" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedBreak" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Break.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddCandy_Land" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedCandy_Land" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Candy_Land.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddDetective_Knight_Redemption" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedDetective_Knight_Redemption" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Detective_Knight_Redemption.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddDont_fuck_In_The_Woods" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedDont_fuck_In_The_Woods" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Dont_fuck_In_The_Woods.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddE0" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedE0" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/E0.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddEncato_At_The_Hollywood_Bowl" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedEncato_At_The_Hollywood_Bowl" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Encato_At_The_Hollywood_Bowl.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddEngel" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedEngel" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Engel.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddGodland" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedGodland" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Godland.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddIs_This_Walls_Could_Sing" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedIs_This_Walls_Could_Sing" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Is_This_Walls_Could_Sing.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddIvana" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedIvana" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="/Films/Ivana.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddLullaby" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedLullaby" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="Films/Lullaby.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddManderake" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedManderake" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="Films/Manderake.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+
+                <button id="AddMender" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedMender" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="Films/Mender.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddRuido" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedRuido" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="/Films/Ruido.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddSadistic" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedSadistic" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="Films/Sadistic.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddSavage_salvation" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedSavage_salvation" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+            </div>
+            <img src="Films/Savage_salvation.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddSinphony" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedSinphony" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="~/Films/Sinphony.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 40%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+                <button id="AddJungleCruise" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedJungleCruise" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+            </div>
+            <img src="film2.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddM3gan" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedM3gan" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="film4.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddAgenteFortune" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedAgenteFortune" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+
+            </div>
+            <img src="film-1.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+                <button id="AddFast9" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedFast9" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+            </div>
+            <img src="film3.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddSick" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedSick" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+            </div>
+            <img src="0-10865.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>
+
+    <div class="col-md-2 col-lg-2" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="card" style="width: 200px ;">
+            <div class="ShadowFilm">
+                <i class="fa-solid fa-circle-play test" style="color: #fc9603; width: 30%; height: 100px; display: block;"></i><a style="color: #fc9603; text-decoration: none; ">Play Now</a>
+
+
+
+                <button id="AddStranger" class="btn" style="width: 45px; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px;"><i class="fa-solid fa-circle-plus play1" id="Add1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+                <button id="CheckedStranger" class="btn" style="width: 45px; display: none; justify-content: center; align-items: center; flex-direction: column; position: absolute; top: 10px; right: 0px; "><i class="fa-solid fa-circle-check play1" id="check1" style="color: #fc9603; width: 40px; height: 40px; display: block; margin-top: 2px; "></i> </button>
+
+
+
+
+            </div>
+            <img src="075-2763.jpg" alt="" width="100%" height="330px">
+        </div>
+    </div>*@

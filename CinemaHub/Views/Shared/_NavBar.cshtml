@@ -1,0 +1,78 @@
+﻿
+<link href="~/Css/HomeStyle.css" />
+
+<nav id="nav" class="" style="position: sticky; top: 0px; z-index: 100; background-color: rgba(5, 5, 5, 0.621); background-color: black;">
+    <div class="NavInfo header_top" style=" z-index: 2;">
+        <div class="container ">
+            <div class="row pl-2 pr-2">
+
+                <div class=" info1 col-lg-2 col-md-2 col-xs-2" style=" display: flex ; justify-content: center; align-items: center;">
+                    @*<div class="container row" style="max-width: 200px;min-width:230px;">*@
+                    <img id="LogoIcon" class="" src="~/images/logo.png" alt="" width="150px">
+                    @*</div>*@
+
+                </div>
+
+                <div class="col-lg-3" style=" padding-top:15px; display: inline-flex;justify-content: center;">
+                    <ul class="list-unstyled" style="display: flex; justify-content:center; align-items: center;">
+                        <li class="list-inline-item" style="padding: 4px;"><a class="NotActive @TempData["Home"]" href="/Home/" id="HomeBtn" style="color: #4b505e; background-color: transparent; border: transparent; ">Home</a></li>
+
+
+                        <li class="list-inline-item" style="padding: 4px;"><a class="NotActive @TempData["Movie"]" href="/Movise" id="MoviseBtn">Movies</a></li>
+                        <li class="list-inline-item" style="padding: 4px;"><a class='NotActive @TempData["Series"]' href="/Series/Index" id="SeriesBtn">Series</a></li>
+                        <li class="list-inline-item" style="padding: 4px;"> <a class="NotActive @TempData["MyList"]" href="/MyList" id="MyListBtn"> MyList</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-7" style=" padding-top:15px;">
+                    <ul class="list-unstyled" style="display: flex; justify-content:flex-end; align-items: center;">
+                        <li class="list-inline-item" style="padding: 4px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <input class="SearchField" type="search" placeholder="Search">
+                                <button class="search" id="SearchBtn" style="margin-left: 10px;"><i class="SearchIcon fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </li>
+
+                        <li class="list-inline-item" style="padding: 4px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="/User" class="user"><i class="fa-solid fa-user"></i></a>
+                            </div>
+                        </li>
+
+
+                        <li class="list-inline-item" style="padding: 4px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="" class="Notify"><i class="fa-solid fa-bell"></i></a>
+                            </div>
+                        </li>
+
+                        @Html.Partial("_LoginPartial")
+
+
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <button id="menu-toggle" class="btn menu-toggle" onclick="" click>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+</nav>
+
+
+
+<script src="~/Js/NavBar.js"></script>
+<style>
+</style>

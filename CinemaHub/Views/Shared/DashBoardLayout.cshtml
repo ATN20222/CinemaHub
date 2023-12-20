@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link rel="stylesheet" href="~/cssFiles/css/all.min.css">
+    <link rel="stylesheet" href="~/cssFiles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Css/Welcome.css">
+    <link rel="stylesheet" href="~/Css/SideBar.css">
+
+    @Styles.Render("~/Content/css")
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+
+
+</head>
+<body  style="overflow-x:hidden; display:flex; align-items:flex-start; background-color: #000000eb; margin-left:0px; margin-right:0px ">
+    
+    <div class="row">
+
+        @Html.Partial("_DashBoardSideBar")
+
+        <div class="container body-content col-lg-7">
+
+            @RenderBody()
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/lib")
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

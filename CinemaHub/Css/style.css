@@ -1,0 +1,398 @@
+
+body{
+  background-color: black;
+  /* height: 1000vh; */
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+overflow-x:hidden;
+}
+
+.LogInContainer{
+position: absolute;
+top: 50%;
+    left: 50%;
+     transform: translate(-50%, -50%); 
+
+z-index: 1;
+
+
+}
+
+
+
+  .login-box {
+    /* position: absolute; */
+    transform: rotateY(90deg)translate(-50%, -50%);
+    transition: all .5s;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: 40px;
+    /* transform: translate(-50%, -50%); */
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fc9603;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fc9603;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fc9603;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fc9603;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #fc9603;
+    font-size: 12px;
+  }
+  
+  .login-box form #ticket {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fc9603;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .login-box #ticket:hover{
+    background:#fc9603;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fc9603,
+                0 0 25px #fc9603,
+                0 0 50px #fc9603,
+                0 0 100px #fc9603;
+  }
+  
+  .login-box #ticket span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box #ticket span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#fc9603);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box #ticket span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,#fc9603);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box #ticket span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#fc9603);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box #ticket span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fc9603);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
+
+
+
+
+
+#ticket{
+  left: 20px;
+  height: 50px;
+  position: absolute;
+  width: 120px;
+  bottom: 21px;
+}
+
+.submit{
+  bottom: 78px;
+    color: #fc9603;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: large;
+    position: absolute;
+    left: 80px;
+}
+
+.Movise_1_Slider{
+  transition: all .5s;
+  transform: translateX(00px);
+
+}
+
+.card{
+  position: relative;
+  overflow: hidden;
+}
+.card img{
+  transition: all .7s;
+}
+.ShadowFilm{
+  transition: all .5s;
+  position: absolute; 
+  background-color: #00000094; 
+  height:0%; 
+  width: 100%;
+  overflow: hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+}
+
+.card:hover .ShadowFilm  {
+  height: 100%;
+  
+
+}
+
+
+
+
+.ShadowFilm {
+  cursor: pointer;
+}
+
+
+/* .card:hover .ShadowFilm .fa-circle-play{
+  animation-name:ChangingColor ;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+} */
+
+
+
+/* 
+@keyframes ChangingColor{
+ 0%{
+  color: #fc9603;
+ }
+ 50%{
+  color: rgb(27, 27, 129);
+ }
+ 80%{
+
+ }
+ 100%{
+  color: #fc9603;
+ }
+
+} */
+
+
+a{
+  text-decoration: none;
+  color: #4b505e;
+  transition: all .7s;
+}
+a:hover{
+  color: #fc9603;
+  text-decoration:underline;
+}
+
+.FooterFinish li a{
+  text-decoration: none;
+  color: #5e5d76;
+}
+
+.FooterFinish li::before{
+  
+  content: "";
+  margin: 4px;
+  width: 1px;
+  height: 10px;
+  top: 1px;
+  background: #5e5d76;
+  display: inline-block;
+  position: relative;
+
+}
+
+.popUp {
+    z-index: 100;
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    border-radius: 12px;
+    /*background: #fff;*/
+    background: #1b1b1b;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #fc9603;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+
+    .popUp.active {
+        transform: translateX(0%);
+    }
+
+    .popUp .popUp-content {
+        display: flex;
+        align-items: center;
+    }
+
+.popUp-content .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: #fc9603;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.popUp-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.message .text {
+    font-size: 20px;
+    font-weight: 400;
+    ;
+    color: #666666;
+}
+
+    .message .text.text-1 {
+        font-weight: 600;
+        color: #333;
+    }
+
+.popUp .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+    .popUp .close:hover {
+        opacity: 1;
+    }
+
+.popUp .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+    .popUp .progress:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #fc9603;
+    }
+
+.progress.active:before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}

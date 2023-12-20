@@ -1,0 +1,148 @@
+﻿
+.body {
+	background-color: #1b1616;
+	overflow-x:hidden;
+}
+
+.list-group li {
+	background-color: transparent;
+	border: transparent;
+	color: #eee;
+	transition: all .3s;
+}
+
+
+nav {
+	min-height: 720px;
+	min-width: 270px;
+	max-width: 270px;
+	background: #000000;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+}
+
+
+ul .list-group-item:hover button {
+	background-color: #c09898;
+}
+
+.menu-toggle {
+	transition: all .5s;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+	margin: 0 auto;
+	padding: 10px 20px;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	background-color: transparent;
+	color: #333;
+	cursor: pointer;
+}
+
+	.menu-toggle span {
+		display: block;
+		width: 25px;
+		height: 3px;
+		margin: 5px 0;
+		background-color: #333;
+		border-radius: 5px;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+		.menu-toggle span:first-child {
+			transform-origin: top left;
+		}
+
+		.menu-toggle span:last-child {
+			transform-origin: bottom left;
+		}
+
+	.menu-toggle.active span:first-child {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.menu-toggle.active span:last-child {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	.menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+
+
+
+
+
+
+.openNav {
+	height: 350px;
+	transition: all .5s;
+}
+
+nav {
+	transition: all .5s;
+	height: auto;
+	min-height: 800px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	
+}
+
+
+
+@media (min-width: 1200px) {
+	nav {
+		height: auto;
+		overflow: hidden;
+		min-height: 800px !important;
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	}
+
+	.openNav {
+		height: auto;
+		transition: all .5s;
+	}
+	.menu-toggle{
+		display:none !important;
+	}
+
+
+}
+
+@media (max-width: 1200px) {
+	nav {
+		height: 65px;
+		position:sticky !important;
+		z-index:100;
+		top:0px;
+		overflow: hidden;
+	}
+
+	.menu-toggle {
+		display: block;
+	}
+
+	table {
+		width: 350px !important;
+	}
+
+	.paginate_button {
+		width:10px;
+		margin:5px;
+	}
+
+	.previous {
+		width: 100px;
+	}
+	.next {
+		width: 100px;
+	}
+
+}
+

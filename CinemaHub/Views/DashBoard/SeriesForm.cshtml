@@ -1,0 +1,79 @@
+﻿@model CinemaHub.ViewModels.SeriesGenreViewModel
+@{
+    ViewBag.Title = "MoviesForm";
+    Layout = "~/Views/Shared/DashBoardLayout.cshtml";
+
+}
+
+<h2>MoviesForm</h2>
+
+@using (Html.BeginForm("CreateSeries", "DashBoard"))
+{
+    String RelDate = Model.series.ReleaseDate;
+    if (Model.series.Id == 0)
+    {
+        RelDate = "1 jan 0001";
+
+    }
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.series.Name)
+        @Html.TextBoxFor(m => m.series.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.series.Name)
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(c => c.series.ReleaseDate)
+        @Html.TextBoxFor(m => m.series.ReleaseDate, new { @class = "form-control field", @Value = RelDate })
+        @Html.ValidationMessageFor(m => m.series.ReleaseDate)
+
+    </div>
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(c => c.series.ImgSrc)
+        @Html.TextBoxFor(m => m.series.ImgSrc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.series.ImgSrc)
+
+    </div>
+
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(c => c.series.Description)
+        @Html.TextBoxFor(m => m.series.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.series.Description)
+
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+
+        @Html.LabelFor(c => c.series.GenreId)
+        @Html.DropDownListFor(m => m.series.GenreId, new SelectList(Model.genre, "Id", "Name"), "Select Genre", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.series.GenreId)
+
+    </div>
+
+
+
+
+
+
+    <input type="hidden" id="series_Id" name="series.Id" value="@Model.series.Id" />
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
+
+}
+
+

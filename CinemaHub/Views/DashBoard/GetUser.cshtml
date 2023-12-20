@@ -1,0 +1,118 @@
+﻿@model IEnumerable<CinemaHub.ViewModels.UserRoleViewModel>
+
+@{
+    ViewBag.Title = "ManageMovies";
+    Layout = "~/Views/Shared/DashBoardLayout.cshtml";
+}
+
+
+<h2>User Management</h2>
+
+<table id="Table" class="table table-bordered table-hover" style="color:white">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Role</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                @if (@user.PhoneNumber == null)
+                {
+
+
+                    <td>No Number</td>
+
+                    }
+                    else
+                        {
+                        <td>@user.PhoneNumber</td>
+
+                        }
+
+                <td>@user.Roles</td>
+
+
+                <td>
+
+                 <button class="btn btn-link">
+                     Block
+                 </button>   
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*
+
+    @section scripts{
+
+    <script>
+
+
+
+                $(document).ready(function () {
+
+                    var Table = $("#Tablel").DataTable({
+                        ajax: {
+                            url: "/api/User",
+                            dataSrc: ""
+
+                        },
+
+
+                        columns: [
+                            {
+                                data: "UserName",
+                                render: function (data, type, mov) {
+                                    return "<a href='/Users/edit/" + mov.Id + "' >" + mov.UserName + "</a>";
+
+                                }
+                            },
+
+
+
+
+                            {
+                                data: "Id",
+                                render: function (data) {
+                                    return "<button class='btn-link js-delete' data-movise-id=" + data + ">Delete</button>"
+                                }
+
+                            },
+
+
+
+                            {
+                                data: "roleName",
+                                render: function (data) {
+                                    return "Role" + data + " "
+                                }
+
+                            }
+
+
+
+                        ]
+                    });
+                });
+
+
+
+            </script>
+
+
+
+            }*@
+
+
+

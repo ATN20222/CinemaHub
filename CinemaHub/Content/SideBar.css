@@ -1,0 +1,29 @@
+﻿
+.body {
+	background-color: #1b1616;
+}
+
+.list-group li {
+	background-color: transparent;
+	border: transparent;
+	color: #eee;
+	transition: all .3s;
+}
+
+
+nav {
+	min-height: 720px;
+	min-width: 270px;
+	max-width: 270px;
+	background: #000000;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+}
+
+
+ul .list-group-item:hover button {
+	background-color: #c09898;
+}

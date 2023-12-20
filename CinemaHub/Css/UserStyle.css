@@ -1,0 +1,178 @@
+body{
+    background-color: black;
+    /* height: 1000vh; */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+  }
+    
+
+
+  .Notify ,
+  .user,
+  .search{
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+}
+
+
+  .fa-bell,
+  .fa-user,
+  .fa-magnifying-glass{
+    color: #4b505e;
+    transition: all 0.2s;
+  }
+
+
+
+
+  .Notify:hover .fa-bell,
+  .user:hover .fa-user,
+  .search:hover .fa-magnifying-glass{
+    color: #fc9603;
+  }
+
+
+  .SearchField{
+    transition: all .2s;
+    width: 50px;
+    border-radius: 20px;
+    padding-left: 18%;
+    background-color: #4b505e;
+    border: transparent;
+    outline:none;
+    color: #fc9603;
+  }
+
+  .Open{
+    width: 150px;
+  }
+
+
+
+
+#ProfileBtn,
+#ChangePasswordBtn,
+#ChangePlanBtn,
+#LogoutBtn{
+    transition: all .2s;
+    background-color: transparent; 
+    outline: none ; 
+    border: transparent; 
+    color:  #4b505e;
+
+}
+
+
+
+
+
+.UserProfileField{
+  display: block;
+}
+
+.ChangePasswordField{
+  display: none;
+}
+.ChangePlanField{
+  display: none;
+}
+
+
+
+
+input{
+  margin: 10px;
+  background-color: transparent;
+  border: transparent;
+  border-bottom:1px solid #4b505e;
+  width: 100px;
+  color: #fc9603;
+  outline: none;
+}
+/* .FName{
+  width: 80px;
+} */
+.Email{
+  width: 100px;
+}
+.PhoneNumber{
+  width: 100px;
+}
+
+
+
+.InputContainer{
+  height: 100%;  
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    position: relative;
+    top: 100%;
+}
+
+
+  a{
+    text-decoration: none;
+    color: #4b505e;
+    transition: all .7s;
+  }
+  a:hover{
+    color: #fc9603;
+    text-decoration:underline;
+  }
+  
+  .FooterFinish li a{
+    text-decoration: none;
+    color: #5e5d76;
+  }
+  
+  .FooterFinish li::before{
+    
+    content: "";
+    margin: 4px;
+    width: 1px;
+    height: 10px;
+    top: 1px;
+    background: #5e5d76;
+    display: inline-block;
+    position: relative;
+  
+  }
